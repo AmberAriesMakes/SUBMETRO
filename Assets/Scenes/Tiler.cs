@@ -10,6 +10,7 @@ public class Tiler : MonoBehaviour
     void Start()
     {
         tiles = GameObject.FindObjectOfType<GroundScript>();
+        SpawnObstacle();
     }
 
     private void OnTriggerExit(Collider other)
@@ -28,7 +29,8 @@ public class Tiler : MonoBehaviour
 
     void SpawnObstacle()
     {
-        int obstacleSpawnIndex = Random.Range(2, 5);
-        Transform spawnPoint = transform.GetChild(ObstacleSpawnIndex);
+        int obstacleSpawnIndex = Random.Range(4, 7);
+        Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
+        Instantiate(Obstacle, spawnPoint.position, Quaternion.identity, transform);
     }
 }
