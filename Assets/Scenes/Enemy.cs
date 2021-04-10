@@ -18,7 +18,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             pmovement.lives -= 1;
+            pmovement.speed -= 10.0f;
+            Destroy(this);
 
+        }
+
+        if (collision.gameObject.name == "Milk Powerup")
+        {
+            Destroy(this);
         }
     }
 

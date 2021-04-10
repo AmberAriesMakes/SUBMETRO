@@ -8,7 +8,8 @@ public class Texte: MonoBehaviour
     [SerializeField] Movement pmovement;
    [SerializeField] Text HealthValue;
     [SerializeField] Text Score;
-    float score;
+    public static float score;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +19,22 @@ public class Texte: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        score += 10 * Time.deltaTime;
+       
         HealthValue.text = pmovement.lives.ToString();
-        Score.text = score.ToString();
+        Score.text = pmovement.playerscore.ToString();
+
+       
+
+
+    }
+    
+
+    public float getscore()
+    {
+        return score;
     }
 
+  
     
 
 }
